@@ -88,13 +88,36 @@
         .fa-bolt {
             text-shadow: 3px 3px black;
         }
+
+        @keyframes fadeIn { from { opacity:0; top:-50px; } to { opacity:1; top:0px; } }
+        
+
+        .fade-in {
+            top: -50px;
+            opacity:0;  /* make things invisible upon start */
+            animation:fadeIn ease-in-out 1; /*call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time*/
+            animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+            animation-duration:1s;
+            animation-delay: .5s;
+            position: relative;
+        }
+
+        .fade-in-two {
+            top: -50px;
+            opacity:0;  /* make things invisible upon start */
+            animation:fadeIn ease-in-out 1; /*call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time*/
+            animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+            animation-duration:1s;
+            animation-delay: 1s;
+            position: relative;
+        }
     </style>
 </head>
 
 <body>
     <section class="matt-container">
         <div class="matt">
-            <div class="fa-10x">
+            <div class="fa-10x fade-in">
                 <span class="fa-layers fa-fw">
                   <i class="fas fa-bolt" style="color:rgba(0, 0, 0, 0.2); top: 10px; left: 10px;"></i>
                   <i class="fa-inverse fas fa-bolt" data-fa-transform=""></i>
@@ -102,7 +125,7 @@
             </div>
             <br>
             <br>
-            <p>
+            <p class="fade-in-two">
                 <a href="http://swingandadrive.com" target="_blank">Swing and a drive!</a>
             </p>
 
